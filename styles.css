@@ -1,7 +1,6 @@
 li{
     text-align: left;
 }
-
 #navBar, .navBar{
     background-color: rgb(23,107,170);
     color: white;
@@ -396,6 +395,10 @@ border-radius: 10px;
     z-index: 1;
     width: 95%;
     text-align: center;
+    left: 15vw;
+    width: 70vw;
+    height: 90vh;
+    overflow-y: scroll;
 }   
 
   
@@ -482,4 +485,26 @@ a:visited{
 .controls, .credits {
     margin-top: 10px;
     font-size: 0.9em;
+}
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+    width: 12px; /* Adjust scrollbar width */
+    height: 12px; /* For horizontal scrollbar */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #176baa; /* Thumb color */
+    border-radius: 10px; /* Rounded corners */
+    margin: 2px;
+}
+
+/* Hover effect for scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: #176baa;
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background: rgb(244,204,67); /* Track color */
 }

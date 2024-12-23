@@ -1,6 +1,6 @@
 <h1>Nooby</h1>
 <p>Nooby is a unblocked games site and also has proxies, hacks, and some of my other projects. It has a very low quality chatroom (at least it works)</p>
-
+<a href="https://some-noob.vercel.app">some-noob.vercel.app</a>
 Major contributor!
 <a href="https://github.com/ekoerp1" target="_blank" >ekoerp1</a>
 thank you!!
