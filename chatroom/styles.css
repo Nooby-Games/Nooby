@@ -44,3 +44,9 @@ h1 {
   font-weight: bold;
   font-size: 1.5rem;
 }
+summary{
+  user-select: none;
+}
+details{
+  user-select: none;
+}
