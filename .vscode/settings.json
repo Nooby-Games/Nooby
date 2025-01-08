@@ -1,0 +1,8 @@
+{
+    "livePreview.defaultPreviewPath": "/update-log.html",
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "master"
+    ],
+    "inlineChat.showDiff": false,
+    "liveServer.settings.port": 5501
+}

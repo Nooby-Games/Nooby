@@ -891,6 +891,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    doodlejump:{
+        title: "Doodle Jump",
+        url: "game-template.html?id=doodlejump",
+        image: "images/proxyandgameimages/gameimages/doodle-jump.png",
+        originalUrl: "Games/html5-games/doodlejump/index.html",
+        description: "A classic platformer including the character named doodle",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     bloonsTD5:{
         title: "Bloons Tower Defense Five",
         url: "game-template.html?id=bloonsTD5",
