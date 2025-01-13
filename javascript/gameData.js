@@ -924,6 +924,27 @@ const games = {
         likes: 0,
         dislikes: 0,
     }, 
-
+    retroBowl: {
+        title: "Retro Bowl",
+        url: "game-template.html?id=retroBowl",
+        image: "images/proxyandgameimages/gameimages/retro-bowl.jpeg",
+        originalUrl: "https://bcrhbrhcdb.github.io/retrobwl-unlimited/",
+        description: "Football!! 'MERCIAN!!",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0, 
+    },
+    blockCars: {
+        title: "Blocky Cars",
+        url: "game-template.html?id=blockyCars",
+        originalUrl:"https://bcrhbrhcdb.github.io/blocky-carsgjyg/",
+        image: "images/proxyandgameimages/gameimages/blocky-cars.jpeg",
+        description: "Build cars that fight each other ig",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0, 
+    }
 
 }
