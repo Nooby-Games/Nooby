@@ -1,7 +1,7 @@
 function Launchmovies(){
     const win = window.open()
     const iframe = document.createElement('iframe')
-    iframe.src = 'https://flix.cbass92.org'
+    iframe.src = 'https://bcrhbrhcdb.github.io/tvflix/index.html'
     iframe.setAttribute('style', 'position: absolute; width: 100vw; height: 100vh; top: 0px; left: 0px; border: none;')
     win.document.body.appendChild(iframe)
     const cred = document.createElement('div')
