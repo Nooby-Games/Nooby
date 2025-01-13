@@ -31,9 +31,9 @@ const movies = {
     },
     minionsGru: {
         title: "Minions, Rise of Gru",
-        url: "movie-template.html?id=minionsGru.jpeg",
+        url: "movie-template.html?id=minionsGru",
         originalUrl: "https://drive.google.com/file/d/1XNolpeeosJbfgYnfknKf1OM7bwHhqibl/preview",
-        image: "images/movie-images/minions-gru",
+        image: "images/movie-images/minions-gru.jpeg",
         description: "banana"
     }
 }
