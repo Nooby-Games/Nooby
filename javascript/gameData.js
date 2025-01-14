@@ -937,7 +937,7 @@ const games = {
         likes: 0,
         dislikes: 0, 
     },
-    blockCars: {
+    blockyCars: {
         title: "Blocky Cars",
         url: "game-template.html?id=blockyCars",
         originalUrl:"https://bcrhbrhcdb.github.io/blocky-carsgjyg/",
