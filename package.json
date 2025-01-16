@@ -1,11 +1,10 @@
 {
   "name": "nooby",
-  "version": "0.6.15",
+  "version": "0.6.6",
   "description": "The noob themed game website.",
   "main": "script.js",
   "scripts": {
-    "start": "servor --reload",
-    "postinstall": "startup.sh"
+    "start": "servor --reload"
   },
   "repository": {
     "type": "git",
