@@ -19,6 +19,16 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    driveMad: {
+        title: "Drive Mad",
+        url: "game-template.html?id=driveMad",
+        originalUrl: "https://crazygames-unblocked.github.io/c77/drive-mad/",
+        image: "images/proxyandgameimages/gameimages/drive-mad.jpeg",
+        description: "Fell off",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     cookieClicker: {
         title: "Cookie Clicker (first method)",
         url: "game-template.html?id=cookieClicker",
