@@ -9,6 +9,16 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    smallCup: {
+        title: "A Small World Cup",
+        url: "game-template.html?id=smallCup",
+        originalUrl: "https://mathgames66.github.io/games/html5/asmallworldcup/",
+        image: "images/proxyandgameimages/gameimages/smallCup.jpeg",
+        description: "Tiny World Cup",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     cookieClicker: {
         title: "Cookie Clicker (first method)",
         url: "game-template.html?id=cookieClicker",

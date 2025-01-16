@@ -4,7 +4,8 @@
   "description": "The noob themed game website.",
   "main": "script.js",
   "scripts": {
-    "start": "servor --reload"
+    "start": "servor --reload",
+    "postinstall": "startup.sh"
   },
   "repository": {
     "type": "git",
