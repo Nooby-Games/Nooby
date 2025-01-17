@@ -119,7 +119,7 @@ const games = {
         title: "Vex 2",
         url: "game-template.html?id=vex2",
         image: "../images/proxyandgameimages/gameimages/vex2.jpeg",
-        originalUrl: "../Games/html5-games/vex2/vex2.html",
+        originalUrl: "Games/html5-games/vex2/vex2.html",
         description: "The second vex",
         type: "folder",
         ratings: [],
