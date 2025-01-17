@@ -304,8 +304,8 @@ embed {
     width: 100%;       
     font-weight: bold;       
     transition: transform 0.5s;     
-    padding: 2px;
-    margin: 2px;
+    padding: 10px;
+    margin: 10px;
     display: inline-block;
     position: relative;
   }
@@ -508,7 +508,12 @@ a:visited{
 ::-webkit-scrollbar-track {
     background: rgb(244,204,67); /* Track color */
 }
-
+.errorPage{
+    width: auto;
+    height: 750px;
+    padding: 50px;
+    margin: 10px;
+}
 
 
 
