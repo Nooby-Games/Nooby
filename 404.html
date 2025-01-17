@@ -35,16 +35,13 @@
     </div>
 
     <script>
-        // Get the current path
-        const currentPath = window.location.pathname;
-
-        // Construct base URL
-        const baseUrl = currentPath.substring(0, currentPath.lastIndexOf('/')) || '.';
+        // Set the base URL relative to the root of the GitHub Pages site
+        const baseUrl = window.location.origin + '/Nooby'; // Change 'Nooby' to your repository name if different
 
         // Set dynamic paths for resources
-        document.getElementById('dynamic-stylesheet').href = `${baseUrl}/styles.css`;
-        document.getElementById('dynamic-favicon').href = `${baseUrl}/images/404.jpeg`;
-        document.getElementById('dynamic-image').src = `${baseUrl}/images/404.jpeg`;
+        document.getElementById('dynamic-stylesheet').href = `${Nooby}/styles.css`;
+        document.getElementById('dynamic-favicon').href = `${Nooby}/images/404.jpeg`;
+        document.getElementById('dynamic-image').src = `${Nooby}/images/404.jpeg`;
     </script>
 </body>
 </html>
