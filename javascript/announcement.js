@@ -5,7 +5,7 @@ function loadAnnouncement() {
     lastAnnouncementDate = localStorage.getItem('lastAnnouncementDate');
     const isAnnouncementClosed = localStorage.getItem('isAnnouncementClosed') === 'true';
 
-    fetch('../html/announcement.html')
+    fetch('Nooby/html/announcement.html')
         .then(response => response.text())
         .then(data => {
             const tempContainer = document.createElement('div');
