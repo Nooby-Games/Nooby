@@ -1,12 +1,12 @@
 // Copyright 2011 Google Inc. All Rights Reserved.
 (function() {
-    /*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
+/*
+ 
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
 */
-    var l, aa = function(a) {
-        var b = 0;
+    let l, aa = function(a) {
+        let b = 0;
         return function() {
             return b < a.length ? {
                 done: !1,
@@ -20,91 +20,93 @@
             return a;
         a[b] = c.value;
         return a
-    }
-    , da = function(a) {
+    }, da = function(a) {
         a = ["object" == typeof globalThis && globalThis, a, "object" == typeof window && window, "object" == typeof self && self, "object" == typeof global && global];
-        for (var b = 0; b < a.length; ++b) {
-            var c = a[b];
+        for (let b = 0; b < a.length; ++b) {
+            let c = a[b];
             if (c && c.Math == Math)
                 return c
         }
         throw Error("Cannot find global object");
     }, ea = da(this), fa = function(a, b) {
-        if (b)
-            a: {
-                var c = ea;
-                a = a.split(".");
-                for (var d = 0; d < a.length - 1; d++) {
-                    var e = a[d];
-                    if (!(e in c))
-                        break a;
-                    c = c[e]
-                }
-                a = a[a.length - 1];
-                d = c[a];
-                b = b(d);
-                b != d && null != b && ca(c, a, {
-                    configurable: !0,
-                    writable: !0,
-                    value: b
-                })
-            }
+        if (b) {
+            updateGlobalObject(a.split("."), b);
+        }
     };
+
+    function updateGlobalObject(parts, updateFunction) {
+        let context = ea;
+        for (let i = 0; i < parts.length - 1; i++) {
+            let part = parts[i];
+            if (!(part in context))
+                return;
+            context = context[part];
+        }
+        let lastPart = parts[parts.length - 1];
+        let oldValue = context[lastPart];
+        let newValue = updateFunction(oldValue);
+        if (newValue != oldValue && newValue != null) {
+            ca(context, lastPart, {
+                configurable: !0,
+                writable: !0,
+                value: newValue
+            });
+        }
+    }
     fa("Symbol", function(a) {
         if (a)
             return a;
-        var b = function(f, g) {
+        const b = function(f, g) {
             this.g = f;
             ca(this, "description", {
                 configurable: !0,
                 writable: !0,
                 value: g
-            })
+            });
         };
         b.prototype.toString = function() {
-            return this.g
-        }
-        ;
-        var c = "jscomp_symbol_" + (1E9 * Math.random() >>> 0) + "_"
+            return this.g;
+        };
+        const c = "jscomp_symbol_" + (1E9 * Math.random() >>> 0) + "_"
           , d = 0
           , e = function(f) {
             if (this instanceof e)
                 throw new TypeError("Symbol is not a constructor");
-            return new b(c + (f || "") + "_" + d++,f)
+            return new b(c + (f || "") + "_" + d++,f);
         };
-        return e
+        return e;
     });
+
     fa("Symbol.iterator", function(a) {
         if (a)
             return a;
         a = Symbol("Symbol.iterator");
-        for (var b = "Array Int8Array Uint8Array Uint8ClampedArray Int16Array Uint16Array Int32Array Uint32Array Float32Array Float64Array".split(" "), c = 0; c < b.length; c++) {
-            var d = ea[b[c]];
+        const b = "Array Int8Array Uint8Array Uint8ClampedArray Int16Array Uint16Array Int32Array Uint32Array Float32Array Float64Array".split(" ");
+        for (let c = 0; c < b.length; c++) {
+            let d = ea[b[c]];
             "function" === typeof d && "function" != typeof d.prototype[a] && ca(d.prototype, a, {
                 configurable: !0,
                 writable: !0,
                 value: function() {
-                    return ha(aa(this))
+                    return ha(aa(this));
                 }
-            })
+            });
         }
-        return a
+        return a;
     });
-    var ha = function(a) {
+
+    const ha = function(a) {
         a = {
             next: a
         };
         a[Symbol.iterator] = function() {
-            return this
-        }
-        ;
-        return a
-    }
-      , p = function(a) {
-        return a.raw = a
-    }
-      , q = function(a) {
-        var b = "undefined" != typeof Symbol && Symbol.iterator && a[Symbol.iterator];
+            return this;
+        };
+        return a;
+    }, p = function(a) {
+        return a.raw = a;
+    }, q = function(a) {
+        const b = "undefined" != typeof Symbol && Symbol.iterator && a[Symbol.iterator];
         if (b)
             return b.call(a);
         if ("number" == typeof a.length)
@@ -112,34 +114,32 @@
                 next: aa(a)
             };
         throw Error(String(a) + " is not an iterable or ArrayLike");
-    }
-      , ia = function(a) {
+    }, ia = function(a) {
         if (!(a instanceof Array)) {
             a = q(a);
-            for (var b, c = []; !(b = a.next()).done; )
+            let b, c = [];
+            while (!(b = a.next()).done) {
                 c.push(b.value);
-            a = c
+            }
+            a = c;
         }
-        return a
-    }
-      , ka = function(a, b) {
-        return Object.prototype.hasOwnProperty.call(a, b)
-    }
-      , ma = "function" == typeof Object.assign ? Object.assign : function(a, b) {
-        for (var c = 1; c < arguments.length; c++) {
-            var d = arguments[c];
+        return a;
+    }, ka = function(a, b) {
+        return Object.prototype.hasOwnProperty.call(a, b);
+    }, ma = "function" == typeof Object.assign ? Object.assign : function(a, b) {
+        for (let c = 1; c < arguments.length; c++) {
+            let d = arguments[c];
             if (d)
-                for (var e in d)
-                    ka(d, e) && (a[e] = d[e])
+                for (let e in d)
+                    ka(d, e) && (a[e] = d[e]);
         }
-        return a
-    }
-    ;
+        return a;
+    };
     fa("Object.assign", function(a) {
-        return a || ma
+        return a || ma;
     });
-    var na = "function" == typeof Object.create ? Object.create : function(a) {
-        var b = function() {};
+    const na = "function" == typeof Object.create ? Object.create : function(a) {
+        const b = function() {};
         b.prototype = a;
         return new b
     }
@@ -153,7 +153,7 @@
         if ("undefined" != typeof Reflect && Reflect.construct) {
             if (a())
                 return Reflect.construct;
-            var b = Reflect.construct;
+            const b = Reflect.construct;
             return function(c, d, e) {
                 c = b(c, d);
                 e && Reflect.setPrototypeOf(c, e.prototype);
@@ -169,9 +169,9 @@
     if ("function" == typeof Object.setPrototypeOf)
         pa = Object.setPrototypeOf;
     else {
-        var ra;
+        let ra;
         a: {
-            var sa = {
+            const sa = {
                 a: !0
             }
               , ta = {};
@@ -190,17 +190,17 @@
         }
         : null
     }
-    var ua = pa
+    const ua = pa
       , t = function(a, b) {
         a.prototype = na(b.prototype);
         a.prototype.constructor = a;
         if (ua)
             ua(a, b);
         else
-            for (var c in b)
+            for (let c in b)
                 if ("prototype" != c)
                     if (Object.defineProperties) {
-                        var d = Object.getOwnPropertyDescriptor(b, c);
+                        const d = Object.getOwnPropertyDescriptor(b, c);
                         d && Object.defineProperty(a, c, d)
                     } else
                         a[c] = b[c];
@@ -223,7 +223,7 @@
         this.h = a
     }
     ;
-    var xa = function(a, b) {
+    const xa = function(a, b) {
         a.l = {
             Kd: b,
             tf: !0
@@ -237,7 +237,7 @@
         this.g = this.H
     }
     ;
-    var ya = function(a, b, c) {
+    const ya = function(a, b, c) {
         a.g = c;
         return {
             value: b
@@ -249,7 +249,7 @@
     }
       , Aa = function(a) {
         a.j = 0;
-        var b = a.l.Kd;
+        const b = a.l.Kd;
         a.l = null;
         return b
     }
@@ -259,7 +259,7 @@
     }
       , Fa = function(a, b) {
         wa(a.g);
-        var c = a.g.o;
+        const c = a.g.o;
         if (c)
             return Da(a, "return"in c ? c["return"] : function(d) {
                 return {
@@ -273,13 +273,13 @@
     }
       , Da = function(a, b, c, d) {
         try {
-            var e = b.call(a.g.o, c);
+            const e = b.call(a.g.o, c);
             if (!(e instanceof Object))
                 throw new TypeError("Iterator result " + e + " is not an object");
             if (!e.done)
                 return a.g.A = !1,
                 e;
-            var f = e.value
+            const f = e.value
         } catch (g) {
             return a.g.o = null,
             xa(a.g, g),
@@ -290,9 +290,9 @@
         return Ea(a)
     }
       , Ea = function(a) {
-        for (; a.g.g; )
+        while (a.g.g) {
             try {
-                var b = a.h(a.g);
+                const b = a.h(a.g);
                 if (b)
                     return a.g.A = !1,
                     {
@@ -303,9 +303,10 @@
                 a.g.h = void 0,
                 xa(a.g, c)
             }
+        }
         a.g.A = !1;
         if (a.g.l) {
-            b = a.g.l;
+            let b = a.g.l;
             a.g.l = null;
             if (b.tf)
                 throw b.Kd;
@@ -361,7 +362,8 @@
         return Ha(new Ga(new Ba(a)))
     }
       , Ja = function() {
-        for (var a = Number(this), b = [], c = a; c < arguments.length; c++)
+        const a = Number(this), b = [], c = a;
+        for (let c = a; c < arguments.length; c++)
             b[c - a] = arguments[c];
         return b
     };
@@ -397,7 +399,7 @@
         b.prototype.h = function(g) {
             if (null == this.g) {
                 this.g = [];
-                var h = this;
+                const h = this;
                 this.j(function() {
                     h.l()
                 })
@@ -405,17 +407,17 @@
             this.g.push(g)
         }
         ;
-        var d = ea.setTimeout;
+        const d = ea.setTimeout;
         b.prototype.j = function(g) {
             d(g, 0)
         }
         ;
         b.prototype.l = function() {
-            for (; this.g && this.g.length; ) {
-                var g = this.g;
+            while (this.g && this.g.length) {
+                const g = this.g;
                 this.g = [];
-                for (var h = 0; h < g.length; ++h) {
-                    var k = g[h];
+                for (let h = 0; h < g.length; ++h) {
+                    const k = g[h];
                     g[h] = null;
                     try {
                         k()
@@ -433,12 +435,12 @@
             })
         }
         ;
-        var e = function(g) {
+        const e = function(g) {
             this.g = 0;
             this.j = void 0;
             this.h = [];
             this.B = !1;
-            var h = this.o();
+            const h = this.o();
             try {
                 g(h.resolve, h.reject)
             } catch (k) {
@@ -452,7 +454,7 @@
                     m.call(h, n))
                 }
             }
-            var h = this
+            const h = this
               , k = !1;
             return {
                 resolve: g(this.G),
@@ -468,20 +470,20 @@
             else {
                 a: switch (typeof g) {
                 case "object":
-                    var h = null != g;
+                    const h = null != g;
                     break a;
                 case "function":
-                    h = !0;
+                    const h = !0;
                     break a;
                 default:
-                    h = !1
+                    const h = !1
                 }
                 h ? this.F(g) : this.A(g)
             }
         }
         ;
         e.prototype.F = function(g) {
-            var h = void 0;
+            let h = void 0;
             try {
                 h = g.then
             } catch (k) {
@@ -509,10 +511,10 @@
         }
         ;
         e.prototype.I = function() {
-            var g = this;
+            const g = this;
             d(function() {
                 if (g.D()) {
-                    var h = ea.console;
+                    const h = ea.console;
                     "undefined" !== typeof h && h.error(g.j)
                 }
             }, 1)
@@ -521,7 +523,7 @@
         e.prototype.D = function() {
             if (this.B)
                 return !1;
-            var g = ea.CustomEvent
+            const g = ea.CustomEvent
               , h = ea.Event
               , k = ea.dispatchEvent;
             if ("undefined" === typeof k)
@@ -539,20 +541,20 @@
         ;
         e.prototype.K = function() {
             if (null != this.h) {
-                for (var g = 0; g < this.h.length; ++g)
+                for (let g = 0; g < this.h.length; ++g)
                     f.h(this.h[g]);
                 this.h = null
             }
         }
         ;
-        var f = new b;
+        const f = new b;
         e.prototype.J = function(g) {
-            var h = this.o();
+            const h = this.o();
             g.Zb(h.resolve, h.reject)
         }
         ;
         e.prototype.L = function(g, h) {
-            var k = this.o();
+            const k = this.o();
             try {
                 g.call(h, k.resolve, k.reject)
             } catch (m) {
@@ -571,7 +573,7 @@
                 }
                 : y
             }
-            var m, n, r = new e(function(v, y) {
+            let m, n, r = new e(function(v, y) {
                 m = v;
                 n = y
             }
@@ -597,7 +599,7 @@
                     throw Error("Unexpected state: " + m.g);
                 }
             }
-            var m = this;
+            const m = this;
             null == this.h ? f.h(k) : this.h.push(k);
             this.B = !0
         }
@@ -612,14 +614,14 @@
         ;
         e.race = function(g) {
             return new e(function(h, k) {
-                for (var m = q(g), n = m.next(); !n.done; n = m.next())
+                for (let m = q(g), n = m.next(); !n.done; n = m.next())
                     c(n.value).Zb(h, k)
             }
             )
         }
         ;
         e.all = function(g) {
-            var h = q(g)
+            const h = q(g)
               , k = h.next();
             return k.done ? c([]) : new e(function(m, n) {
                 function r(B) {
@@ -11645,7 +11647,7 @@
         return u.navigator ? u.navigator.userAgent : ""
     }, Lt = kb(Kt(), "(iPad") || kb(Kt(), "(Macintosh") || kb(Kt(), "(iPod") || kb(Kt(), "(iPhone");
     var Mt = "ad.doubleclick.net bid.g.doubleclick.net ggpht.com google.co.uk google.com googleads.g.doubleclick.net googleads4.g.doubleclick.net googleadservices.com googlesyndication.com googleusercontent.com gstatic.com gvt1.com prod.google.com pubads.g.doubleclick.net s0.2mdn.net static.doubleclick.net surveys.g.doubleclick.net youtube.com ytimg.com".split(" ")
-      , Nt = ["c.googlesyndication.com"];
+      , Nt = ["c\\.googlesyndication\\.com"];
     function Ot(a, b) {
         b = void 0 === b ? window.location.protocol : b;
         var c = !1;
@@ -13855,11 +13857,11 @@
         P.prototype.M.call(this)
     }
     ;
-    var Vw = RegExp("/pagead/conversion|/pagead/adview|/pagead/gen_204|/activeview?|csi.gstatic.com/csi|google.com/pagead/xsul|google.com/ads/measurement/l|googleads.g.doubleclick.net/pagead/ide_cookie|googleads.g.doubleclick.net/xbbe/pixel")
+    var Vw = RegExp("/pagead/conversion|/pagead/adview|/pagead/gen_204|/activeview?|csi.gstatic.com/csi|google.com/pagead/xsul|google.com/ads/measurement/l|googleads\\.g\\.doubleclick\\.net/pagead/ide_cookie|googleads\\.g\\.doubleclick\\.net/xbbe/pixel")
       , Ww = RegExp("outstream.min.js")
       , Xw = RegExp("outstream.min.css")
-      , Yw = RegExp("fonts.gstatic.com")
-      , Zw = RegExp("googlevideo.com/videoplayback|c.2mdn.net/videoplayback|gcdn.2mdn.net/videoplayback")
+      , Yw = RegExp("fonts\\.gstatic\\.com")
+      , Zw = RegExp("googlevideo.com/videoplayback|c\\.2mdn.net/videoplayback|gcdn\\.2mdn.net/videoplayback")
       , $w = RegExp("custom.elements.min.js");
     function ax(a, b) {
         var c = 0

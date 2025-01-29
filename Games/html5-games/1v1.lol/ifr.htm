@@ -61,7 +61,7 @@ window['___cfg'] = window['___cfg'] || window['___gcfg'];;
 if(!window.gadgets["config"]){gadgets.config=function(){var f;
 var h={};
 var b={};
-function c(j,l){for(var k in l){if(!l.hasOwnProperty(k)){continue
+function c(j,l){for(var k in l){if(!l.hasOwnProperty(k) || k === "__proto__" || k === "constructor"){continue
 }if(typeof j[k]==="object"&&typeof l[k]==="object"){c(j[k],l[k])
 }else{j[k]=l[k]
 }}}function i(){var j=document.scripts||document.getElementsByTagName("script");

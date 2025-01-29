@@ -189,7 +189,7 @@
                           return e.replace(/[\-\[\]{}()*+?.,\\\^$|#]/g, "\\$&")
                       }
                       function d(e) {
-                          return a(e).replace("<", "(?:<|&lt;)").replace(">", "(?:>|&gt;)").replace("&", "(?:&|&amp;)").replace('"', '(?:"|&quot;)').replace(/\s+/g, "\\s+")
+                          return a(e).replace(/</g, "(?:<|&lt;)").replace(/>/g, "(?:>|&gt;)").replace(/&/g, "(?:&|&amp;)").replace(/"/g, '(?:"|&quot;)').replace(/\s+/g, "\\s+")
                       }
                       function A(e, t) {
                           for (var i, r, o = 0, a = t.length; o < a; ++o)
@@ -2822,6 +2822,7 @@
               if (!window.__tcfapi) {
                   var e = window.top
                     , t = {};
+                  const validCallIds = new Set();
                   window.__tcfapi = function(i, n, r, o) {
                       var a = "" + Math.random()
                         , s = {
@@ -2833,6 +2834,7 @@
                           }
                       };
                       t[a] = r,
+                      validCallIds.add(a);
                       e.postMessage(s, "*")
                   }
                   ,
@@ -2842,8 +2844,13 @@
                           i = "string" == typeof e.data ? JSON.parse(e.data) : e.data
                       } catch (e) {}
                       var n = i.__tcfapiReturn;
-                      n && "function" == typeof t[n.callId] && (t[n.callId](n.returnValue, n.success),
-                      t[n.callId] = null)
+                      if (n && validCallIds.has(n.callId) && Object.prototype.hasOwnProperty.call(t, n.callId) && typeof t[n.callId] === 'function') {
+                          t[n.callId](n.returnValue, n.success);
+                          t[n.callId] = null;
+                          validCallIds.delete(n.callId);
+                      } else {
+                          console.error("Invalid callId or not a function:", n.callId);
+                      }
                   }
                   ), !1)
               }
@@ -2881,8 +2888,10 @@
                   ,
                   window.addEventListener("message", (function(e) {
                       var i = e && e.data && e.data.__uspapiReturn;
-                      i && i.callId && "function" == typeof t[i.callId] && (t[i.callId](i.returnValue, i.success),
-                      t[i.callId] = null)
+                      if (i && i.callId && Object.prototype.hasOwnProperty.call(t, i.callId) && "function" == typeof t[i.callId]) {
+                          t[i.callId](i.returnValue, i.success);
+                          t[i.callId] = null;
+                      }
                   }
                   ), !1)
               }

@@ -2244,7 +2244,7 @@ Game.Launch=function()
 			}
 			catch(e)
 			{
-				var exp=new RegExp('\W+','g');
+				var exp=new RegExp('\\W+','g');
 				Game.bakeryName=what.replace(exp,' ');
 				//Game.bakeryName=what.replace(/\W+/g,' ');
 				Game.bakeryName=Game.bakeryName.substring(0,28);

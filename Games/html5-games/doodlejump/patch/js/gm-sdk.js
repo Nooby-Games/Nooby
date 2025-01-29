@@ -1454,7 +1454,7 @@ var _0x7d4a = [
     "getShowable",
     "_requesting",
     "updateLastInGameAdTime",
-    "(gamemonetize.com|y8.com",
+    "(gamemonetize\\.com|y8\\.com",
     "https://api.gamemonetize.com/data.json",
     "<div id=\"gmLoading\" style=\"position:absolute;bottom:0;left:0;right:0;z-index:999999;\"><div style=\"border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;\"><a style=\"margin-top: 3px;position: absolute;right: 5px;text-decoration: none;\" target=\"_blank\" href=\"https://gamemonetize.com/\"><span style=\"font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;\" id=\"loading-text-gm\">Powered by</span><img style=\"vertical-align: top;position: relative;width: 131px;\" id=\"gmLogo\" alt=\"GameMonetize.com\" src=\"https://gamemonetize.com/gamemonetize-logo.png\" border=\"0\"></a><h1 style=\"display:none;text-indent: -9999px;\">GameMonetize.com</h1></div></div>",
     "gamemonetize.com",
