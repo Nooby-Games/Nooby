@@ -384,34 +384,35 @@ SPDX-License-Identifier: Apache-2.0
         }
         : null
     });
-    fa("Promise", function(a) {
-        function b() {
-            this.g = null
-        }
-        function c(g) {
-            return g instanceof e ? g : new e(function(h) {
-                h(g)
-            }
-            )
-        }
-        if (a)
-            return a;
-        b.prototype.h = function(g) {
-            if (null == this.g) {
-                this.g = [];
-                const h = this;
-                this.j(function() {
-                    h.l()
-                })
-            }
-            this.g.push(g)
-        }
-        ;
-        const d = ea.setTimeout;
-        b.prototype.j = function(g) {
-            d(g, 0)
-        }
-        ;
+fa("Symbol.iterator", function(a) {
+     if (a)
+         return a;
+     a = Symbol("Symbol.iterator");
+     const b = "Array Int8Array Uint8Array Uint8ClampedArray Int16Array Uint16Array Int32Array Uint32Array Float32Array Float64Array".split(" ");
+     for (let c = 0; c < b.length; c++) {
+         let d = ea[b[c]];
+         if ("function" === typeof d && "function" != typeof d.prototype[a]) {
+             ca(d.prototype, a, {
+                 configurable: !0,
+                 writable: !0,
+                 value: function() {
+                     return ha(aa(this));
+                 }
+             });
+         }
+     }
+     return a;
+ });
+
+ const ha = function(a) {
+     a = {
+         next: a
+     };
+     a[Symbol.iterator] = function() {
+         return this;
+     };
+    return a;
+ };
         b.prototype.l = function() {
             while (this.g && this.g.length) {
                 const g = this.g;

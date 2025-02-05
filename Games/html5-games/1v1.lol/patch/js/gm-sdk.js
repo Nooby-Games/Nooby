@@ -671,7 +671,7 @@ var _0x7d4a = [
     "none",
     "gmadstester",
     "(vkplay.ru|vkplay.com|dzen.ru)",
-    "https://pubads.g.doubleclick.net/gampad/ads?iu=/21739493398/GameMonetize.com-ADX-AFG-Preroll-Ads&description_url=",
+    "https://pubads.g.doubleclick.net/gampad/ads?iu=/21739493398/GameMonetize\.com-ADX-AFG-Preroll-Ads&description_url=",
     "(y8.com|y8|dollmania.com|pog.com|gamepost.com)",
     "<div id=\"gmLoadingText\" style=\"position:absolute;bottom:0;left:0;right:0;z-index:999999;\"><div style=\"border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;\"><a style=\"margin-top: 3px;position: absolute;right: 5px;text-decoration: none;\" target=\"_blank\" href=\"https://gamemonetize.com/\"><span style=\"font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;\" id=\"loading-text-gm\">Powered by</span><img style=\"vertical-align: top;position: relative;width: 131px;\" id=\"gmLogo\" alt=\"GameMonetize.com\" src=\"patch/images/gamemonetize-logo.png?https://gamemonetize.com/gamemonetize-logo.png\" border=\"0\"></a><h1 style=\"display:none;text-indent: -9999px;\">GameMonetize.com</h1></div></div>",
     "#sdk__advertisement",
@@ -5999,8 +5999,13 @@ var adxAds2 = false;
             return this[_0x7d4a[1012]](_0xc8c5xa || _0x7d4a[1011], [])
         },
         promise: function(_0xc8c5xa, _0xc8c5x16) {
-            var _0xc8c5xc, _0xc8c5xb = 1, e = _0xc8c5x8.Deferred(), _0xc8c5x12 = this, _0xc8c5x10 = this[_0x7d4a[21]], _0xc8c5xf = function() {
-                --_0xc8c5xb || e[_0x7d4a[976]](_0xc8c5x12, [_0xc8c5x12])
+            let _0xc8c5xc;
+            let _0xc8c5xb = 1;
+            const e = _0xc8c5x8.Deferred();
+            const _0xc8c5x12 = this;
+            const _0xc8c5x10 = this[_0x7d4a[21]];
+            const _0xc8c5xf = function() {
+            --_0xc8c5xb || e[_0x7d4a[976]](_0xc8c5x12, [_0xc8c5x12])
             };
             _0x7d4a[102] != typeof _0xc8c5xa && (_0xc8c5x16 = _0xc8c5xa,
             _0xc8c5xa = void (0)),
@@ -7782,8 +7787,7 @@ var adxAds2 = false;
         };
         _0xc8c5x8[_0x7d4a[1060]][_0x7d4a[1067]][_0xc8c5x16] = {
             setup: function() {
-                var _0xc8c5xb = this[_0x7d4a[805]] || this
-                  , e = _0xc8c5x34[_0x7d4a[1008]](_0xc8c5xb, _0xc8c5x16);
+               const _0xc8c5xc = function(_0xc8c5xa) { _0xc8c5x8[_0x7d4a[1060]][_0x7d4a[1254]](_0xc8c5x16, _0xc8c5xa[_0x7d4a[1095]], _0xc8c5x8[_0x7d4a[1060]][_0x7d4a[1082]](_0xc8c5xa))};
                 e || _0xc8c5xb[_0x7d4a[303]](_0xc8c5xa, _0xc8c5xc, !0),
                 _0xc8c5x34[_0x7d4a[1008]](_0xc8c5xb, _0xc8c5x16, (e || 0) + 1)
             },
@@ -7833,9 +7837,11 @@ var adxAds2 = false;
         }
     }
     _0xc8c5x8[_0x7d4a[1261]] = function(_0xc8c5xa, _0xc8c5x16) {
-        var _0xc8c5xc, _0xc8c5xb = [], e = function(_0xc8c5xa, _0xc8c5x16) {
-            var _0xc8c5xc = _0xc8c5x8[_0x7d4a[741]](_0xc8c5x16) ? _0xc8c5x16() : _0xc8c5x16;
-            _0xc8c5xb[_0xc8c5xb[_0x7d4a[21]]] = encodeURIComponent(_0xc8c5xa) + _0x7d4a[161] + encodeURIComponent(null == _0xc8c5xc ? _0x7d4a[34] : _0xc8c5xc)
+        let _0xc8c5xc;
+        const _0xc8c5xb = [];
+        const e = function(_0xc8c5xa, _0xc8c5x16) {
+        const _0xc8c5xc = _0xc8c5x8[_0x7d4a[741]](_0xc8c5x16) ? _0xc8c5x16() : _0xc8c5x16;
+        _0xc8c5xb[_0xc8c5xb[_0x7d4a[21]]] = encodeURIComponent(_0xc8c5xa) + _0x7d4a[161] + encodeURIComponent(null == _0xc8c5xc ? _0x7d4a[34] : _0xc8c5xc)
         };
         if (Array[_0x7d4a[26]](_0xc8c5xa) || _0xc8c5xa[_0x7d4a[947]] && !_0xc8c5x8[_0x7d4a[742]](_0xc8c5xa)) {
             _0xc8c5x8[_0x7d4a[529]](_0xc8c5xa, function() {
