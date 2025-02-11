@@ -9,6 +9,7 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    // follow this format when adding games. Make sure you add the images + url OR game html file.
     smallCup: {
         title: "A Small World Cup",
         url: "game-template.html?id=smallCup",
