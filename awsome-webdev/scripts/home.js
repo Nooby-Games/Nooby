@@ -1,5 +1,5 @@
 function chat(){
-    url = 'https://bcrhbrhcdb.github.io/Nooby/chatroom/'
+    url = 'https://nooby-games.github.io/Nooby/chatroom/'
     win = window.open('', `Classroom`, 'width=400, height=400, resizable=yes')
     const frame = document.createElement('iframe')
     frame.src = url
