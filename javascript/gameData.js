@@ -487,6 +487,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    picohot:{
+        title: "Picohot",
+        url: "game-template.html?id=picohot",
+        image: "../images/proxyandgameimages/gameimages/picohot.png",
+        originalUrl: "../Games/html5-games/picohot/index.html",
+        description: "Superhot knockoff maybe",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     paperIo:{
         title: "Paper.io",
         url: "game-template.html?id=paperIo",
