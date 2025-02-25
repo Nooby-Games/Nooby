@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bcrhbrhcdb/Nooby.git"
+    "url": "git+https://github.com/nooby-games/Nooby.git"
   },
   "keywords": [
     "games",
@@ -20,9 +20,9 @@
   "author": "alex",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bcrhbrhcdb/Nooby/issues"
+    "url": "https://github.com/nooby-games/Nooby/issues"
   },
-  "homepage": "https://github.com/bcrhbrhcdb/Nooby#readme",
+  "homepage": "https://github.com/nooby-games/Nooby#readme",
   "dependencies": {
     "@vercel/analytics": "^1.4.1",
     "servor": "^4.0.2"
