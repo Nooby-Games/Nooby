@@ -6,25 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const appInfo = document.getElementById('appInfo');
 
     if (appContainer) {
-        // This is the movies list page
+        // This is the app list page
         generateAppElements(appContainer);
         setupSearch();
     } else if (appFrame) {
-        // This is the individual movie page
+        // This is the individual app page
         loadApp();
     }
 
     function generateAppElements(container) {
-        if (typeof app !== 'undefined') {
-            const sortedApp = Object.entries(app).sort((a, b) => 
+        if (typeof apps !== 'undefined') {
+            const sortedApps = Object.entries(apps).sort((a, b) =>
                 a[1].title.toLowerCase().localeCompare(b[1].title.toLowerCase())
             );
-    
-            sortedApp.forEach(([id, app]) => {
+
+            sortedApps.forEach(([id, app]) => {
                 const appElement = document.createElement('div');
                 appElement.className = 'content';
                 appElement.innerHTML = `
-                    <a href="movie-template.html?id=${id}">
+                    <a href="app-template.html?id=${id}">
                         <h3>${app.title}</h3>
                         <img src="${app.image}" class='img' alt="${app.title}" />
                         <p>${app.description}</p>
@@ -44,16 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (searchInput) {
             searchInput.addEventListener('input', () => {
                 const searchText = searchInput.value.toLowerCase();
-                const app = document.querySelectorAll('.content');
+                const appElements = document.querySelectorAll('.content'); // Corrected variable name
                 let hasResults = false;
 
-                app.forEach(app => {
-                    const appTitle = app.querySelector('h3').textContent.toLowerCase();
-                    if (appTitle.includes(searchText)) {
-                        app.style.display = '';
+                appElements.forEach(appElement => { // Corrected variable name
+                    const appTitleText = appElement.querySelector('h3').textContent.toLowerCase(); // Corrected variable name
+                    if (appTitleText.includes(searchText)) {
+                        appElement.style.display = '';
                         hasResults = true;
                     } else {
-                        app.style.display = 'none';
+                        appElement.style.display = 'none';
                     }
                 });
 
@@ -72,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const app = apps[appId];
             document.title = app.title;
             appTitle.textContent = app.title;
-            
+
             appFrame.src = app.originalUrl;
             appFrame.style.display = 'block';
-            
+
             // Adjust frame size
             appFrame.style.width = '100%';
             appFrame.style.height = '80vh'; // 80% of the viewport height
@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
             appInfo.innerHTML = appInfoHTML || '';
             appInfo.style.display = appInfoHTML ? 'block' : 'none';
 
-            // Remove the adjustIframeHeight function as we're using a fixed height now
         } else {
             console.error('App not found');
             appTitle.textContent = 'App Not Found';
