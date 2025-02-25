@@ -1,7 +1,7 @@
 const apps = {
     test: {
         title: "test pookie",
-        url: "game-template.html?id=tetris",
+        url: "app-template.html?id=test",
         originalUrl: "https://emulatoros.github.io/gfile/tetris/index.html",
         image: "../images/app-images/nerd.jpeg/tetris.png",
         description: "You know what this is, a ripoff of Tetris.",

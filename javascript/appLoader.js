@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateAppElements(container) {
         if (typeof app !== 'undefined') {
-            const sortedApp = Object.entries(apps).sort((a, b) => 
+            const sortedApp = Object.entries(app).sort((a, b) => 
                 a[1].title.toLowerCase().localeCompare(b[1].title.toLowerCase())
             );
     
