@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.title = app.title;
             appTitle.textContent = app.title;
             
-            appFrame.src = movie.originalUrl;
+            appFrame.src = app.originalUrl;
             appFrame.style.display = 'block';
             
             // Adjust frame size
