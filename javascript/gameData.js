@@ -181,7 +181,7 @@ const games = {
     incremancer: {
         title: "Incremancer",
         url: "game-template.html?id=incremancer",
-        originalUrl: "https://bcrhbrhcdb.github.io/incremancer/",
+        originalUrl: "https://nooby-games.github.io/incremancer/",
         image: "../images/proxyandgameimages/gameimages/incremancer.png",
         description: "A zombie themed idle game. One of my top five!",
         ratings: [],
