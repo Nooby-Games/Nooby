@@ -35,7 +35,13 @@ const games = {
         url: "game-template.html?id=runThreeWIthLevelEditor",
         originalUrl: "../Games/html5-games/run-3/index.html",
         image: "../images/proxyandgameimages/gameimages/run3.jpeg",
-        description: "WIth level editor",
+        description: "With level editor(click the I to unlock everything)",
+        controls: `
+        <h1>IMPORTANT!!</h1>
+        <p>To unlock the shop and stuff, click the I in the upper right corner. It will have a message saying thanks for looking at the credits, and give you some starting gems.</p>
+        <p>The level editor costs 500 gems in the shop.</p>
+        <p>To save, watch this video:</p>
+        `,
         type: "folder",
         ratings: [],
         likes: 0,
