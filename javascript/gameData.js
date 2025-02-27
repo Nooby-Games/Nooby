@@ -9,16 +9,6 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    run3WithLevelEditor: {
-        title: "Run 3 (with level editor)",
-        url: "game-template.html?id=tetris",
-        originalUrl: "../Games/html5-games/run-3/index.html",
-        image: "../images/proxyandgameimages/gameimages/run3.jpeg",
-        description: "Same thing as run 3, but with a level editor",
-        ratings: [],
-        likes: 0,
-        dislikes: 0,
-    },
     // follow this format when adding games. Make sure you add the images + url OR game html file.
     smallCup: {
         title: "A Small World Cup",
