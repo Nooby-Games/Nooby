@@ -41,7 +41,7 @@ const games = {
         <p>To unlock the shop and stuff, click the I in the upper right corner. It will have a message saying thanks for looking at the credits, and give you some starting gems.</p>
         <p>The level editor costs 500 gems in the shop.</p>
         <p>To learn how save, watch this video: </p>
-        <iframe class='movie-frame' src="../images/proxyandgameimages/videos/save-game-from-ruffle-instructions.webm" id="movieFrame" title="Movie Frame" allowfullscreen></iframe>
+        <iframe class='movie-frame' src="../images/save-and-import-ruffle.webm" id="movieFrame" title="Movie Frame" allowfullscreen></iframe>
 
         `,
         type: "folder",
