@@ -30,6 +30,16 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    runThreeWIthLevelEditor: {
+        title: "Run 3 (with level editor)",
+        url: "game-template.html?id=runThreeWIthLevelEditor",
+        originalUrl: "../Games/html5-games/run-3/index.html",
+        image: "../images/proxyandgameimages/gameimages/run-3.jpeg",
+        description: "WIth level editor",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     cookieClicker: {
         title: "Cookie Clicker (first method)",
         url: "game-template.html?id=cookieClicker",
