@@ -1035,7 +1035,7 @@ const games = {
     backrooms:{
         title: "Backrooms",
         url: "game-template.html?id=backrooms",
-        image: "../Games/html5-games/backrooms/backrooms.jpg",
+        image: "../Games/html5-games/backrooms/img/splash.jpg",
         originalUrl: "../Games/html5-games/backrooms/index.html",
         description: "can you get out",
         type: "folder",
