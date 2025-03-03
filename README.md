@@ -1,3 +1,6 @@
+<p>!!TO ANY COMPANIES OR DEVELOPERS!!</p>
+<p>If there is a game app, or anything you own that you would like credits to or be removed, please don't report me, I will remove the game ASAP without any problems. I am just a small developer trying to make people happy.</p>
+
 <h1>Nooby</h1>
 <p>Nooby is a unblocked games site and also has proxies, hacks, and some of my other projects. It has a very low quality chatroom (at least it works)</p>
 
